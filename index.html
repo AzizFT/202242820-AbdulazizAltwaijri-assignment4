@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aziz Page</title>
+  <meta name="description" content="Abdulaziz Altwaijri - Personal Portfolio" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#home" aria-label="Go to home">Aziz Page</a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          ☰
+        </button>
+        <ul class="nav-list" id="navList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn ghost" id="themeToggle" type="button" aria-label="Toggle theme">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="badge" id="greeting">Hello 👋</p>
+
+          <h1>
+            Abdulaziz Altwaijri <span class="highlight">(Aziz)</span>
+          </h1>
+
+          <p class="subtitle">
+            A passionate and adaptable Software Engineer with a solid background in programming and software fundamentals.
+            Interested in learning through project management, problem solving, and collaboration. Eager to continue growing
+            academically and professionally while contributing positively within engineering teams.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn outline" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="profile">
+            <div class="avatar" aria-hidden="true">A</div>
+            <div>
+              <h3 class="profile-name">Abdulaziz Altwaijri</h3>
+              <p class="profile-meta">Software Engineering Student</p>
+            </div>
+          </div>
+
+          <ul class="quick-list">
+            <li>🆔 202242820</li>
+            <li>🧠 Interested in AI + Project Management</li>
+            <li>✅ CAPM Certified</li>
+          </ul>
+        </div>
+          <div class="visitor-box card">
+            <h3>Personalize Your Visit</h3>
+            <label for="visitorName">Enter your name</label>
+            <input type="text" id="visitorName" placeholder="Your name" />
+            <button class="btn" id="saveNameBtn" type="button">Save Name</button>
+            <p id="welcomeMessage" class="form-status"></p>
+          </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>About Me</h2>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Overview</h3>
+            <p>
+              A passionate and adaptable Software Engineer with a solid background in programming and software fundamentals.
+              Interested in learning through project management, problem solving, and collaboration. Eager to continue growing
+              academically and professionally while contributing positively within engineering teams.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Skills</h3>
+            <div class="chips">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Git/GitHub</span>
+              <span class="chip">Problem Solving</span>
+              <span class="chip">Project Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p class="section-desc">
+            Use the search, filter, and sort controls to explore my projects.
+          </p>
+        </div>
+
+        <div class="controls card">
+          <div class="search-box">
+            <input
+              type="text"
+              id="projectSearch"
+              placeholder="Search projects..."
+              aria-label="Search projects"
+            />
+          </div>
+
+          <div class="control-row">
+            <label for="categoryFilter">Filter by category</label>
+            <select id="categoryFilter">
+              <option value="all">All</option>
+              <option value="web">Web</option>
+              <option value="database">Database</option>
+              <option value="portfolio">Portfolio</option>
+            </select>
+          </div>
+
+          <div class="control-row">
+            <label for="sortOption">Sort projects</label>
+            <select id="sortOption">
+              <option value="az">Name (A-Z)</option>
+              <option value="za">Name (Z-A)</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="emptyMessage" class="empty-message" style="display: none;">
+          No projects found.
+        </p>
+
+        <div class="grid three" id="projectsGrid">
+          <article class="card project" data-title="FaceLite Social Media App" data-category="web">
+            <div class="project-img" role="img" aria-label="Project placeholder image"></div>
+            <h3>FaceLite - Social Media App</h3>
+            <p>
+              A social media app concept focused on simple posting and user interaction.
+            </p>
+          </article>
+
+          <article class="card project" data-title="ASUsoccer Tournament System" data-category="database">
+            <div class="project-img" role="img" aria-label="Project placeholder image"></div>
+            <h3>ASUsoccer - Tournament System</h3>
+            <p>
+              A database-driven project for managing soccer tournaments at ASU.
+            </p>
+          </article>
+
+          <article class="card project" data-title="Portfolio Website" data-category="portfolio">
+            <div class="project-img" role="img" aria-label="Project placeholder image"></div>
+            <h3>Portfolio Website</h3>
+            <p>
+              Responsive portfolio built with HTML, CSS, and JavaScript.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="github-projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>GitHub Repositories</h2>
+          <p class="section-desc">
+            This section loads my public repositories dynamically from GitHub.
+          </p>
+        </div>
+
+        <div id="apiStatus" class="form-status">Loading repositories...</div>
+        <div class="grid three" id="githubRepoList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>Send a message</h3>
+
+            <form id="contactForm" class="form" novalidate>
+              <label>
+                Name
+                <input type="text" name="name" id="name" placeholder="Your name" required />
+              </label>
+
+              <label>
+                Email
+                <input type="email" name="email" id="email" placeholder="you@example.com" required />
+              </label>
+
+              <label>
+                Message
+                <textarea name="message" id="message" rows="5" placeholder="Write your message..." required></textarea>
+              </label>
+
+              <button class="btn" type="submit">Send</button>
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Info</h3>
+            <ul class="quick-list">
+              <li>📍 Saudi Arabia</li>
+              <li>🎓 Software Engineering Student</li>
+              <li>📌 Open to learning & collaboration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Aziz Page</p>
+      <a href="#home" class="link">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
