@@ -4,7 +4,7 @@ This is the final version of my personal portfolio web application. It brings to
 
 ## Live Demo
 
-Add GitHub Pages link here after deployment.
+https://azizft.github.io/202242820-AbdulazizAltwaijri-assignment4/
 
 ## Features
 

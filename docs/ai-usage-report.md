@@ -2,7 +2,7 @@
 
 ## 1. Tools Used
 
-https://azizft.github.io/202242820-AbdulazizAltwaijri-assignment4/
+The main AI tool used in this assignment was ChatGPT.
 
 ## 2. Use Cases
 
