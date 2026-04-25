@@ -3,23 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Aziz Page</title>
-  <meta name="description" content="Abdulaziz Altwaijri - Personal Portfolio" />
+  <meta name="description" content="Abdulaziz Altwaijri final personal portfolio web application" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#home" aria-label="Go to home">Aziz Page</a>
+      <a class="logo" href="#home">Aziz Page</a>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation">
           ☰
         </button>
+
         <ul class="nav-list" id="navList">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#career">Career</a></li>
+          <li><a href="#github">GitHub</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -42,55 +47,46 @@
 
           <p class="subtitle">
             A passionate and adaptable Software Engineer with a solid background in programming and software fundamentals.
-            Interested in learning through project management, problem solving, and collaboration. Eager to continue growing
-            academically and professionally while contributing positively within engineering teams.
+            Interested in project management, problem solving, AI, and building useful software solutions.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn" href="#projects">View Projects</a>
             <a class="btn outline" href="#contact">Contact Me</a>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="profile">
-            <div class="avatar" aria-hidden="true">A</div>
-            <div>
-              <h3 class="profile-name">Abdulaziz Altwaijri</h3>
-              <p class="profile-meta">Software Engineering Student</p>
-            </div>
-          </div>
+        <div class="card visitor-card">
+          <h3>Personalize Your Visit</h3>
 
-          <ul class="quick-list">
-            <li>🆔 202242820</li>
-            <li>🧠 Interested in AI + Project Management</li>
-            <li>✅ CAPM Certified</li>
-          </ul>
+          <label for="visitorName">Your name</label>
+          <input type="text" id="visitorName" placeholder="Enter your name" />
+
+          <button class="btn small-btn" id="saveNameBtn" type="button">
+            Save Name
+          </button>
+
+          <p class="form-status" id="welcomeMessage"></p>
         </div>
-          <div class="visitor-box card">
-            <h3>Personalize Your Visit</h3>
-            <label for="visitorName">Enter your name</label>
-            <input type="text" id="visitorName" placeholder="Your name" />
-            <button class="btn" id="saveNameBtn" type="button">Save Name</button>
-            <p id="welcomeMessage" class="form-status"></p>
-          </div>
       </div>
     </section>
-
 
     <section class="section" id="about">
       <div class="container">
         <div class="section-head">
           <h2>About Me</h2>
+          <p class="section-desc">
+            Software Engineering student focused on learning, building, and improving through real projects.
+          </p>
         </div>
 
         <div class="grid two">
           <div class="card">
             <h3>Overview</h3>
             <p>
-              A passionate and adaptable Software Engineer with a solid background in programming and software fundamentals.
-              Interested in learning through project management, problem solving, and collaboration. Eager to continue growing
-              academically and professionally while contributing positively within engineering teams.
+              I am Abdulaziz Altwaijri, a Software Engineering student interested in web development,
+              project management, and AI-related solutions. I enjoy building clean applications that are easy to use
+              and useful for real users.
             </p>
           </div>
 
@@ -100,8 +96,8 @@
               <span class="chip">HTML</span>
               <span class="chip">CSS</span>
               <span class="chip">JavaScript</span>
-              <span class="chip">Git/GitHub</span>
-              <span class="chip">Problem Solving</span>
+              <span class="chip">GitHub</span>
+              <span class="chip">API Integration</span>
               <span class="chip">Project Management</span>
             </div>
           </div>
@@ -114,81 +110,120 @@
         <div class="section-head">
           <h2>Projects</h2>
           <p class="section-desc">
-            Use the search, filter, and sort controls to explore my projects.
+            Search, filter, and sort my projects using the controls below.
           </p>
         </div>
 
-        <div class="controls card">
-          <div class="search-box">
-            <input
-              type="text"
-              id="projectSearch"
-              placeholder="Search projects..."
-              aria-label="Search projects"
-            />
-          </div>
+        <div class="card controls">
+          <input
+            type="text"
+            id="projectSearch"
+            placeholder="Search projects..."
+            aria-label="Search projects"
+          />
 
-          <div class="control-row">
-            <label for="categoryFilter">Filter by category</label>
-            <select id="categoryFilter">
-              <option value="all">All</option>
-              <option value="web">Web</option>
-              <option value="database">Database</option>
-              <option value="portfolio">Portfolio</option>
-            </select>
-          </div>
+          <select id="categoryFilter" aria-label="Filter projects by category">
+            <option value="all">All Categories</option>
+            <option value="web">Web</option>
+            <option value="database">Database</option>
+            <option value="portfolio">Portfolio</option>
+          </select>
 
-          <div class="control-row">
-            <label for="sortOption">Sort projects</label>
-            <select id="sortOption">
-              <option value="az">Name (A-Z)</option>
-              <option value="za">Name (Z-A)</option>
-            </select>
-          </div>
+          <select id="sortOption" aria-label="Sort projects">
+            <option value="az">Sort A-Z</option>
+            <option value="za">Sort Z-A</option>
+          </select>
         </div>
 
-        <p id="emptyMessage" class="empty-message" style="display: none;">
+        <p class="empty-message" id="emptyMessage">
           No projects found.
         </p>
 
         <div class="grid three" id="projectsGrid">
           <article class="card project" data-title="FaceLite Social Media App" data-category="web">
-            <div class="project-img" role="img" aria-label="Project placeholder image"></div>
+            <div class="project-img"></div>
             <h3>FaceLite - Social Media App</h3>
             <p>
               A social media app concept focused on simple posting and user interaction.
+              This project helped me think about user flows, interface structure, and basic app features.
             </p>
           </article>
 
           <article class="card project" data-title="ASUsoccer Tournament System" data-category="database">
-            <div class="project-img" role="img" aria-label="Project placeholder image"></div>
+            <div class="project-img"></div>
             <h3>ASUsoccer - Tournament System</h3>
             <p>
               A database-driven project for managing soccer tournaments at ASU.
+              It focuses on teams, matches, standings, and tournament organization.
             </p>
           </article>
 
           <article class="card project" data-title="Portfolio Website" data-category="portfolio">
-            <div class="project-img" role="img" aria-label="Project placeholder image"></div>
+            <div class="project-img"></div>
             <h3>Portfolio Website</h3>
             <p>
-              Responsive portfolio built with HTML, CSS, and JavaScript.
+              A responsive personal portfolio website with interactive features,
+              API integration, state management, documentation, and presentation materials.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="github-projects">
+    <section class="section" id="career">
+      <div class="container">
+        <div class="section-head">
+          <h2>Career Path Recommender</h2>
+          <p class="section-desc">
+            Choose an interest and skill level to get a personalized learning direction.
+          </p>
+        </div>
+
+        <div class="card career-card">
+          <div class="career-controls">
+            <div>
+              <label for="interestSelect">Interest area</label>
+              <select id="interestSelect">
+                <option value="web">Web Development</option>
+                <option value="ai">AI / Machine Learning</option>
+                <option value="pm">Project Management</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="levelSelect">Current level</label>
+              <select id="levelSelect">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+
+            <button class="btn career-btn" id="recommendBtn" type="button">
+              Get Recommendation
+            </button>
+          </div>
+
+          <div class="recommendation-box" id="recommendationBox">
+            Select your interest and level to see a recommendation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="github">
       <div class="container">
         <div class="section-head">
           <h2>GitHub Repositories</h2>
           <p class="section-desc">
-            This section loads my public repositories dynamically from GitHub.
+            Live repositories loaded from the GitHub API.
           </p>
         </div>
 
-        <div id="apiStatus" class="form-status">Loading repositories...</div>
+        <p class="form-status" id="apiStatus">
+          Loading repositories...
+        </p>
+
         <div class="grid three" id="githubRepoList"></div>
       </div>
     </section>
@@ -197,41 +232,31 @@
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
+          <p class="section-desc">
+            Send a message using the validated contact form.
+          </p>
         </div>
 
-        <div class="grid two">
-          <div class="card">
-            <h3>Send a message</h3>
+        <div class="card">
+          <form id="contactForm" class="form" novalidate>
+            <label>
+              Name
+              <input type="text" id="name" placeholder="Your name" />
+            </label>
 
-            <form id="contactForm" class="form" novalidate>
-              <label>
-                Name
-                <input type="text" name="name" id="name" placeholder="Your name" required />
-              </label>
+            <label>
+              Email
+              <input type="email" id="email" placeholder="you@example.com" />
+            </label>
 
-              <label>
-                Email
-                <input type="email" name="email" id="email" placeholder="you@example.com" required />
-              </label>
+            <label>
+              Message
+              <textarea id="message" rows="5" placeholder="Write your message..."></textarea>
+            </label>
 
-              <label>
-                Message
-                <textarea name="message" id="message" rows="5" placeholder="Write your message..." required></textarea>
-              </label>
-
-              <button class="btn" type="submit">Send</button>
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
-            </form>
-          </div>
-
-          <div class="card">
-            <h3>Info</h3>
-            <ul class="quick-list">
-              <li>📍 Saudi Arabia</li>
-              <li>🎓 Software Engineering Student</li>
-              <li>📌 Open to learning & collaboration</li>
-            </ul>
-          </div>
+            <button class="btn" type="submit">Send</button>
+            <p class="form-status" id="formStatus"></p>
+          </form>
         </div>
       </div>
     </section>
